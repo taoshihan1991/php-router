@@ -1,0 +1,13 @@
+{
+    "name": "taoshihan/php-router",
+    "description": "php simple router",
+    "type": "library",
+    "authors": [
+        {
+            "name": "taoshihan1991",
+            "email": "630892807@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
