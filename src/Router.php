@@ -9,6 +9,7 @@ class Router
     private $request = null;
     private $response = null;
     private $router = array();
+    private static $basePath = "./";
     private $control = "\\controller";
     private $bindings = array();
     private $resource = array();
@@ -48,6 +49,13 @@ class Router
     public function setConstant()
     {
         if (!defined("ROOT")) define("ROOT", dirname(__FILE__));
+    }
+    public static function setRootPath($path)
+    {
+        if(empty($path)){
+            $path=dirname(__FILE__);
+        }
+        self::$basePath=$path;
     }
     public function setControllerNameSpace($controller)
     {
@@ -155,7 +163,7 @@ class Router
     public static function loadClass($class)
     {
         $class = str_replace('\\', '/', $class);
-        $dir = str_replace('\\', '/', __DIR__);
+        $dir = str_replace('\\', '/', self::$basePath);
         $class = $dir . "/" . $class . ".php";
         if (!file_exists($class)) {
             return false;
