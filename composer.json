@@ -1,5 +1,6 @@
 {
     "name": "taoshihan/php-router",
+    "license": "Apache-2.0",
     "description": "php simple router",
     "type": "library",
     "authors": [
